@@ -27,7 +27,26 @@ See [Access Modifiers](../../programming-guide/classes-and-structs/access-modifi
 
 In the following example, two classes are declared, `PointTest` and `MainClass`. The public members `x` and `y` of `PointTest` are accessed directly from `MainClass`.
 
-[!code-csharp[csrefKeywordsModifiers#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#13)]
+```csharp
+class PointTest
+{
+    public int x; 
+    public int y;
+}
+
+class MainClass4
+{
+    static void Main() 
+    {
+        var p = new PointTest();
+        // Direct access to public members.
+        p.x = 10;
+        p.y = 15;
+        Console.WriteLine("x = "+p.x+", y = "+p.y);  
+    }
+}
+// Output: x = 10, y = 15
+```
 
 If you change the `public` access level to [private](private.md) or [protected](protected.md), you will get the error message:
 
